@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard - Portfolio</title>
+  <meta name="description" content="Study monitor with progress and NBSA boundary visualization.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="img/hz-logo.svg" alt="HZ logo"><div><strong>My Portfolio</strong></div></div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <aside>
+      <h3>Useful links</h3>
+      <ul class="aside-links">
+        <li><a href="https://learn.hz.nl" target="_blank" rel="noopener">Learn (MyHZ)</a></li>
+        <li><a href="https://hz.nl/en/education/regulations" target="_blank" rel="noopener">CER</a></li>
+        <li><a href="https://hz.nl/en/education/implementation-regulations" target="_blank" rel="noopener">IR</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <h1>Study Monitor</h1>
+      <p>Below is a simple table that lists first-year test components grouped by quarter and course.</p>
+      <div class="table-wrap">
+        <table aria-describedby="study-monitor">
+          <thead><tr><th>Quarter</th><th>Course</th><th>Exam</th><th>EC</th><th>Grade</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Q1</td><td>Intro to Web</td><td>Project</td><td>5</td><td>9.0</td><td class="status-passed">Passed</td></tr>
+            <tr><td>Q1</td><td>Programming Basics</td><td>Exam</td><td>5</td><td>-</td><td class="status-pending">No grade</td></tr>
+            <tr><td>Q2</td><td>Databases</td><td>Exam</td><td>5</td><td>-</td><td class="status-pending">No grade</td></tr>
+            <tr><td>Q2</td><td>Math</td><td>Exam</td><td>5</td><td>5.0</td><td class="status-missed">Failed</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Completeness / NBSA</h2>
+      <p>Total obtained EC: <strong id="obtained">10</strong> / 60 (NBSA boundary: 45 EC)</p>
+      <div class="progress" aria-hidden="true"><span id="progress-bar" style="width:17%"></span></div>
+      <p style="margin-top:8px;font-size:14px;color:#555">NBSA boundary marker shown at 75% of the bar (45/60).</p>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio</p>
+  </footer>
+</body>
+</html>
