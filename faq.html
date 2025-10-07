@@ -6,6 +6,50 @@
   <title>FAQ - Portfolio</title>
   <meta name="description" content="Veelgestelde vragen over HZ en studielogistiek.">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .faq-item {
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    
+    .faq-question {
+      padding: 15px;
+      cursor: pointer;
+      background-color: #f5f5f5;
+      font-weight: bold;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-question:hover {
+      background-color: #e8e8e8;
+    }
+    
+    .faq-question::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: bold;
+    }
+    
+    .faq-question.active::after {
+      content: '−';
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 15px;
+    }
+    
+    .faq-answer.open {
+      max-height: 200px;
+      padding: 15px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -37,20 +81,50 @@
     <main>
       <h1>Veelgestelde vragen</h1>
       <section>
-        <h2>Hoe kun je een document printen vanaf je laptop bij HZ?</h2>
-        <p>Gebruik de HZ-printers; verbind met Eduroam en volg de printinstructies op Learn (MijnHZ).</p>
+        <div class="faq-item">
+          <div class="faq-question">
+            Hoe kun je een document printen vanaf je laptop bij HZ?
+          </div>
+          <div class="faq-answer">
+            <p>Gebruik de HZ-printers; verbind met Eduroam en volg de printinstructies op Learn (MijnHZ).</p>
+          </div>
+        </div>
 
-        <h2>Hoe kun je een document scannen en naar je laptop sturen bij HZ?</h2>
-        <p>Gebruik de HZ-scanstations en laat het bestand naar je e-mail sturen als PDF of opslaan in je HZ-bestanden.</p>
+        <div class="faq-item">
+          <div class="faq-question">
+            Hoe kun je een document scannen en naar je laptop sturen bij HZ?
+          </div>
+          <div class="faq-answer">
+            <p>Gebruik de HZ-scanstations en laat het bestand naar je e-mail sturen als PDF of opslaan in je HZ-bestanden.</p>
+          </div>
+        </div>
 
-        <h2>Hoe kan ik iets kopen in de HZ-webshop?</h2>
-        <p>Log in met je HZ-account, selecteer de gewenste artikelen en reken af met de beschikbare betaalmethodes.</p>
+        <div class="faq-item">
+          <div class="faq-question">
+            Hoe kan ik iets kopen in de HZ-webshop?
+          </div>
+          <div class="faq-answer">
+            <p>Log in met je HZ-account, selecteer de gewenste artikelen en reken af met de beschikbare betaalmethodes.</p>
+          </div>
+        </div>
 
-        <h2>Hoe kun je een projectruimte reserveren?</h2>
-        <p>Gebruik het reserveringssysteem via Learn of het intranet van de campus.</p>
+        <div class="faq-item">
+          <div class="faq-question">
+            Hoe kun je een projectruimte reserveren?
+          </div>
+          <div class="faq-answer">
+            <p>Gebruik het reserveringssysteem via Learn of het intranet van de campus.</p>
+          </div>
+        </div>
 
-        <h2>Wat zijn de instructies voor parkeren bij HZ?</h2>
-        <p>Kijk op de HZ-parkeerpagina voor tarieven en regels; bezoekers hebben mogelijk een vergunning nodig.</p>
+        <div class="faq-item">
+          <div class="faq-question">
+            Wat zijn de instructies voor parkeren bij HZ?
+          </div>
+          <div class="faq-answer">
+            <p>Kijk op de HZ-parkeerpagina voor tarieven en regels; bezoekers hebben mogelijk een vergunning nodig.</p>
+          </div>
+        </div>
       </section>
     </main>
   </div>
@@ -58,5 +132,19 @@
   <footer>
     <p>&copy; 2025 Mijn Portfolio</p>
   </footer>
+
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+    
+    questions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const isOpen = answer.classList.contains('open');
+        
+        answer.classList.toggle('open');
+        question.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
